@@ -1,4 +1,5 @@
 import { useRoutes, BrowserRouter } from 'react-router-dom'
+import { listaFavoritosProvider } from '../../Context/Context'
 import './App.css'
 import { Navbar } from '../../template/Navbar'
 import { Footer } from '../../template/Footer'
@@ -19,13 +20,13 @@ const AppRoutes = () => {
 const App = () => {  
 
   return (
-    <>
+    <listaFavoritosProvider>
       <Navbar/>
         <BrowserRouter>
           <AppRoutes/>
         </BrowserRouter>
       <Footer/>
-    </>
+    </listaFavoritosProvider>
   )
 }
 

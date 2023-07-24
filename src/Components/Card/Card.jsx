@@ -1,7 +1,7 @@
 
 
 export const Card = (data) => {
-  console.log(data)
+  
   return (
     <div className=" max-w-sm h-96 bg-white rounded-lg overflow-hidden shadow-md m-5  cursor-pointer">
       <figure className="relative mb-2 w-full h-3/5">
