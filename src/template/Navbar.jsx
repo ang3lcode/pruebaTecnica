@@ -8,7 +8,7 @@ export const Navbar = () => {
 
         <a href="#" className="text-white text-3xl font-semibold">Pokemon</a>
         <div className="hidden md:flex space-x-4">
-          <a href="#" className="text-white">Inicio</a>
+          <a href="#/" className="text-white">Favoritos</a>
           <a href="#contacto" className="text-white">Contacto</a>
         </div>
         <div className="md:hidden flex">
