@@ -1,7 +1,8 @@
 import './App.css'
 import { Navbar } from '../../template/Navbar'
 import { Footer } from '../../template/Footer'
-import { Card } from '../componente/Card'
+// import { Card } from '../../Components/Card'
+import { Home } from '../Home/Home'
 
 function App() {
   
@@ -9,7 +10,7 @@ function App() {
   return (
     <>
       <Navbar/>
-      <Card></Card>
+        <Home></Home>
       <Footer/>
 
     </>
