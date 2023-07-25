@@ -3,14 +3,18 @@ import { FavoriteContext } from "../../Context/Context";
 import { PlusIcon } from '@heroicons/react/24/solid'
 
 export const Card = (data) => {
-  const context = useContext(FavoriteContext)
-  const showP = (PDetail) => {
+    const context = useContext(FavoriteContext)
+  
+    const showP = (PDetail) => {
     context.openPDetail()
     context.setPShow(PDetail)
+    context.closeSideMenu()
   }
-  const addPToCart = (PData) => {
+  const addPToCart = (event, PData) => {
+    event.stopPropagation()
     context.setPCart([...context.PCart, PData])
-    console.log('CART: ', context.PCart )
+    context.openSideMenu()
+    
     
   }
   
@@ -23,7 +27,7 @@ export const Card = (data) => {
         <div className="absolute top-0 right-0 flex justify-center items-center bg-slate-500 w-6 h-6 rounded-s-full"
         >
           <PlusIcon 
-          onClick={() => addPToCart(data.data) }
+          onClick={(event) => addPToCart(event, data.data) }
           className='h-6 w-6 text-black'></PlusIcon>
         </div>
       </figure>

@@ -9,9 +9,13 @@ export const FavoriteProvider = ({children}) => {
   const openPDetail = () => setIsPDetailOpen(true)
   const closePDetail = () => setIsPDetailOpen(false)
 
+  const [isSideMenuOpen, setIsSideMenuOpen] = useState(false)
+  const openSideMenu = () => setIsSideMenuOpen(true)
+  const closeSideMenu = () => setIsSideMenuOpen(false)
+
   const [PShow, setPShow] = useState({})
 
-  const [PCart, setPCart] = useState([]) //lista 
+  const [PCart, setPCart] = useState([]) //lista closeSideMenu
   
 
   // const [items,setItems] = useState(null) // es de un contador 
@@ -20,7 +24,9 @@ export const FavoriteProvider = ({children}) => {
       isPDetailOpen, 
       openPDetail, closePDetail,
       PShow, setPShow,
-      PCart, setPCart
+      PCart, setPCart,
+      isSideMenuOpen,
+      openSideMenu, closeSideMenu,
     }}>
       {children}
     </FavoriteContext.Provider>

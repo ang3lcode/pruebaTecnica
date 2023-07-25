@@ -9,6 +9,7 @@ import { Favorite } from '../Favorite/Favoritos'
 import { NotFound } from '../NotFound/NotFound'
 import { Actividad } from '../Actividad/Actividad'
 import { Contacto } from '../Contacto/Contacto'
+import SideMenu from '../../Components/SideMenu'
 
 
 const AppRoutes = () => {
@@ -26,9 +27,10 @@ const App = () => {
 
   return (
     <FavoriteProvider>
-      <Navbar/>
         <BrowserRouter>
           <AppRoutes/>
+          <Navbar/>
+          <SideMenu/>
         </BrowserRouter>
       <Footer/>
     </FavoriteProvider>
