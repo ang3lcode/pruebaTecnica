@@ -1,11 +1,13 @@
 import { createContext } from 'react'
 
-const listaFavoritos = createContext()
+export const FavoriteContext= createContext()
 
-export const listaFavoritosProvider = ({children}) => {
+export const FavoriteProvider = ({children}) => {
+
+  // const [items,setItems] = useState(null) // es de un contador 
   return (
-    <listaFavoritos.Provider>
+    <FavoriteContext.Provider>
       {children}
-    </listaFavoritos.Provider>
+    </FavoriteContext.Provider>
   )
 }

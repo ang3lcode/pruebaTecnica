@@ -1,13 +1,16 @@
-
+// import { useContext } from "react";
+// import { FavoriteContext } from "../../Context/Context";
 
 export const Card = (data) => {
+  // const context = useContext(FavoriteContext)
   
   return (
     <div className=" max-w-sm h-96 bg-white rounded-lg overflow-hidden shadow-md m-5  cursor-pointer">
       <figure className="relative mb-2 w-full h-3/5">
         <span className="absolute bottom-0 left-5 bg-slate-600 rounded-lg text-black text-sm px-3"> {data.data.category.name} </span>
         <img className="h-56 w-full object-cover" src={data.data.images[0]} alt="pokemon" />
-        <div className="absolute top-0 right-0 flex justify-center items-center bg-slate-500 w-6 h-6 rounded-s-full">
+        <div className="absolute top-0 right-0 flex justify-center items-center bg-slate-500 w-6 h-6 rounded-s-full"
+        onClick={() => console.log('aqui')}>
           +
         </div>
       </figure>
