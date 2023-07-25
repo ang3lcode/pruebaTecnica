@@ -19,7 +19,7 @@ const SideMenu = () => {
             onClick={() => context.closeSideMenu()}></XMarkIcon>
         </div>
       </div>
-      <div className='px-7'>
+      <div className='px-7 overflow-y-scroll'>
         {
           context.PCart.map( card => (
             <ListCard 

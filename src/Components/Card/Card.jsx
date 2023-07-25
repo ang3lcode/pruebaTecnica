@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { FavoriteContext } from "../../Context/Context";
-import { PlusIcon } from '@heroicons/react/24/solid'
+import { PlusIcon, CheckIcon } from '@heroicons/react/24/solid'
 
 export const Card = (data) => {
     const context = useContext(FavoriteContext)
@@ -17,6 +17,31 @@ export const Card = (data) => {
     
     
   }
+  const renderIcon = (id) => {
+    
+      const isInCard = context.PCart.filter(pok => pok.id === id).length > 0
+
+      if (isInCard) {
+        return (
+          <div 
+            className="absolute top-0 right-0 flex justify-center items-center bg-green-600 w-6 h-6 rounded-s-full">
+            <CheckIcon 
+            className='h-6 w-6 text-black'></CheckIcon>
+          </div>
+        )
+      } else {
+        
+        return (
+          <div 
+            className="absolute top-0 right-0 flex justify-center items-center bg-slate-500 w-6 h-6 rounded-s-full">
+            <PlusIcon 
+            onClick={(event) => addPToCart(event, data.data) }
+            className='h-6 w-6 text-black'></PlusIcon>
+          </div>
+        )
+      }
+      
+  }
   
   return (
     <div className=" max-w-sm h-96 bg-white rounded-lg overflow-hidden shadow-md m-5  cursor-pointer"
@@ -24,12 +49,7 @@ export const Card = (data) => {
       <figure className="relative mb-2 w-full h-3/5">
         <span className="absolute bottom-0 left-5 bg-slate-600 rounded-lg text-black text-sm px-3"> {data.data.category.name} </span>
         <img className="h-56 w-full object-cover" src={data.data.images[0]} alt="pokemon" />
-        <div className="absolute top-0 right-0 flex justify-center items-center bg-slate-500 w-6 h-6 rounded-s-full"
-        >
-          <PlusIcon 
-          onClick={(event) => addPToCart(event, data.data) }
-          className='h-6 w-6 text-black'></PlusIcon>
-        </div>
+        {renderIcon(data.data.id)}
       </figure>
 
       <div className="px-4">

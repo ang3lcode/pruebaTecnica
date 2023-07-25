@@ -9,7 +9,7 @@ export const Navbar = () => {
         <a href="/" className="text-white text-3xl font-semibold">Pokemon</a>
   
         <div className="hidden md:flex space-x-4">
-          <a href="/Favorite" className="text-white">Favoritos</a>
+         
           <a href="/Actividad" className="text-white">Actividad 2</a>
           <a href="/Contacto" className="text-white">Contacto</a>
           <a href="/Error" className="text-white">Error</a>
