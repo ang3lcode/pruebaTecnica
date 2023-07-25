@@ -10,16 +10,11 @@ export const Navbar = () => {
   
         <div className="hidden md:flex space-x-4">
           <a href="/Favorite" className="text-white">Favoritos</a>
-          <a href="#contacto" className="text-white">Contacto</a>
+          <a href="/Actividad" className="text-white">Actividad 2</a>
+          <a href="/Contacto" className="text-white">Contacto</a>
+          <a href="/Error" className="text-white">Error</a>
         </div>
-        <div className="md:hidden flex">
-          {/* Botón de menú para dispositivos móviles */}
-          <button className="text-white">
-            <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              {/* <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path> */}
-            </svg>
-          </button>
-        </div>
+       
       </div>
     </nav>
   );

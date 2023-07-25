@@ -7,6 +7,8 @@ import { Footer } from '../../template/Footer'
 import { Home } from '../Home/Home'
 import { Favorite } from '../Favorite/Favoritos'
 import { NotFound } from '../NotFound/NotFound'
+import { Actividad } from '../Actividad/Actividad'
+import { Contacto } from '../Contacto/Contacto'
 
 
 const AppRoutes = () => {
@@ -14,6 +16,8 @@ const AppRoutes = () => {
     { path:'/', element: <Home/>},
     { path:'/home', element: <Home/>},
     { path:'/Favorite', element: <Favorite/>},
+    { path:'/Actividad', element: <Actividad/>},
+    { path:'/contacto', element: <Contacto/>},
     { path:'/*', element: <NotFound/>}
   ])  
   return routes
