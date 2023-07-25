@@ -6,7 +6,11 @@ import { ListCard } from '../ListCard'
 
 const SideMenu = () => {
   const context = useContext(FavoriteContext)
-  console.log('CART: ', context.PCart )
+  
+  const handleDelete = (id) => {
+    const filtered = context.PCart.filter(pok => pok.id != id)
+    context.setPCart(filtered)
+  }
 
   return (
     <aside
@@ -24,8 +28,10 @@ const SideMenu = () => {
           context.PCart.map( card => (
             <ListCard 
             key={card.id}
+            id={card.id}
             title={card.title} 
-            imageUrl={card.images} />
+            imageUrl={card.images} 
+            handleDelete={handleDelete}/>
           ))
         }
 
