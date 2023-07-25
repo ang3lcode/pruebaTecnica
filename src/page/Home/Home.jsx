@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { Layout } from "../../Components/Layout/Layout"
 import { Card } from "../../Components/Card/Card"
+import PDetail from "../../Components/PDetail/index"
 
 export function Home() {
   const [items, setItems] = useState(null)
@@ -24,6 +25,7 @@ export function Home() {
           }     
 
       </div>
+      <PDetail/>
     </Layout>
   )
 }

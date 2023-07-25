@@ -1,0 +1,5 @@
+.p-detail {
+    width: 360px;
+    height: calc(100vh - 85px);
+    top: 80px;
+  }

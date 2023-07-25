@@ -1,17 +1,30 @@
-// import { useContext } from "react";
-// import { FavoriteContext } from "../../Context/Context";
+import { useContext } from "react";
+import { FavoriteContext } from "../../Context/Context";
+import { PlusIcon } from '@heroicons/react/24/solid'
 
 export const Card = (data) => {
-  // const context = useContext(FavoriteContext)
+  const context = useContext(FavoriteContext)
+  const showP = (PDetail) => {
+    context.openPDetail()
+    context.setPShow(PDetail)
+  }
+  const addPToCart = (PData) => {
+    context.setPCart([...context.PCart, PData])
+    console.log('CART: ', context.PCart )
+    
+  }
   
   return (
-    <div className=" max-w-sm h-96 bg-white rounded-lg overflow-hidden shadow-md m-5  cursor-pointer">
+    <div className=" max-w-sm h-96 bg-white rounded-lg overflow-hidden shadow-md m-5  cursor-pointer"
+    onClick={() => showP(data.data)}>
       <figure className="relative mb-2 w-full h-3/5">
         <span className="absolute bottom-0 left-5 bg-slate-600 rounded-lg text-black text-sm px-3"> {data.data.category.name} </span>
         <img className="h-56 w-full object-cover" src={data.data.images[0]} alt="pokemon" />
         <div className="absolute top-0 right-0 flex justify-center items-center bg-slate-500 w-6 h-6 rounded-s-full"
-        onClick={() => console.log('aqui')}>
-          +
+        >
+          <PlusIcon 
+          onClick={() => addPToCart(data.data) }
+          className='h-6 w-6 text-black'></PlusIcon>
         </div>
       </figure>
 

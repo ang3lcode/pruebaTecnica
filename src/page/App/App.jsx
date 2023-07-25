@@ -12,6 +12,7 @@ import { NotFound } from '../NotFound/NotFound'
 const AppRoutes = () => {
   let routes = useRoutes ([
     { path:'/', element: <Home/>},
+    { path:'/home', element: <Home/>},
     { path:'/Favorite', element: <Favorite/>},
     { path:'/*', element: <NotFound/>}
   ])  
